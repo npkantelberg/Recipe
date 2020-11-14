@@ -1,0 +1,5 @@
+#ignore the build folder
+/build/*
+
+#ignore the node_modules folder
+/node_modules/*
