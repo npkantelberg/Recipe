@@ -1,5 +1,6 @@
 import { render } from 'react-dom';
 import React from 'react';
-import App from './components/App.js';
+import App from './components/App';
+import Router from './components/Router';
 
-render(<App />, document.getElementById('app'));
+render(<Router />, document.getElementById('app'));
