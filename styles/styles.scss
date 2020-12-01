@@ -1,0 +1,20 @@
+fa{
+  font-family: 'Font Awesome\ 5 Free';
+  *{
+    font-family: 'Font Awesome\ 5 Free';
+  }
+}
+
+.recipe-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  img {
+    max-width: 100%;
+  }
+  .ingredients-list {
+    width: 100%;
+  }
+  .instructions {
+    width: 100%;
+  }
+}

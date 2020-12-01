@@ -18,7 +18,7 @@ class AddRecipeForm extends React.Component{
 
     const recipe ={
       name: this.nameRef.current.value,
-      image: this.nameRef.current.value,
+      image: this.imageRef.current.value,
       ingredients: this.ingredientsRef.current.value,
       instructions: this.instructionsRef.current.value
     }
