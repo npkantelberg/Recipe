@@ -8,21 +8,12 @@ class AddRecipeForm extends React.Component{
 
   addRecipe = (e) => {
     e.preventDefault();
-
-    // const nameValue = this.nameRef.current.value;
-    // const imageValue = this.nameRef.current.value;
-    // const ingredientsValue = this.ingredientsRef.current.value;
-    // const instructionsValue = this.instructionsRef.current.value
-
-    // console.log('Name: ' + nameValue + ' Image: ' + imageValue + ' Ingredients: ' + ingredientsValue + ' Instructions: ' + instructionsValue);
-
     const recipe ={
       name: this.nameRef.current.value,
       image: this.imageRef.current.value,
       ingredients: this.ingredientsRef.current.value,
       instructions: this.instructionsRef.current.value
     }
-    console.log(recipe);
     this.props.addRecipe(recipe);
     // refresh the form
     e.currentTarget.reset();

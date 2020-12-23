@@ -3,12 +3,33 @@ fa {
   fa * {
     font-family: 'Font Awesome\ 5 Free'; }
 
+.react-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .react-wrapper .search-wrapper {
+    width: 100%;
+    flex: 1 1 100%; }
+  .react-wrapper .recipes-section {
+    flex: 1 1 33%; }
+  .react-wrapper .meal-plan-section {
+    flex: 1 1 33%; }
+  .react-wrapper .grocery-list-section {
+    flex: 1 1 33%; }
+
 .recipe-wrapper {
   display: flex;
   flex-wrap: wrap; }
   .recipe-wrapper img {
-    max-width: 100%; }
+    max-width: 100%;
+    max-height: 25vh;
+    width: 100%;
+    object-fit: cover; }
+  .recipe-wrapper h4 {
+    margin: 20px 0px 0px 0px; }
   .recipe-wrapper .ingredients-list {
-    width: 100%; }
+    width: 100%;
+    margin-top: 0px; }
   .recipe-wrapper .instructions {
-    width: 100%; }
+    width: 100%;
+    margin-top: 0px; }

@@ -10,6 +10,8 @@
   "author": "Nicholas Kantelberg",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^8.2.1",
+    "re-base": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
