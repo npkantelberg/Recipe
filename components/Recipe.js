@@ -3,6 +3,7 @@ import React from 'react';
 class Recipe extends React.Component{
   handleClick = () => {
     this.props.addToMealPlan(this.props.index);
+    // this.props.addToGroceryList(this.props.details.ingredients);
   }
   render(){
     const name = this.props.details.name;

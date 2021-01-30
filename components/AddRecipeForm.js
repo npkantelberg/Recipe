@@ -4,6 +4,7 @@ class AddRecipeForm extends React.Component{
   nameRef = React.createRef();
   imageRef = React.createRef();
   ingredientsRef = React.createRef();
+  // ingredientsArray = ingredientsRef.split(",");
   instructionsRef = React.createRef();
 
   addRecipe = (e) => {
@@ -11,7 +12,7 @@ class AddRecipeForm extends React.Component{
     const recipe ={
       name: this.nameRef.current.value,
       image: this.imageRef.current.value,
-      ingredients: this.ingredientsRef.current.value,
+      ingredients: this.ingredientsRef.current.value.split(","),
       instructions: this.instructionsRef.current.value
     }
     this.props.addRecipe(recipe);

@@ -1,19 +1,24 @@
 import React from 'react';
 
 class MealPlan extends React.Component{
+
   renderMealPlan = (key) => {
     const mealPlanItem = this.props.recipes[key];
     const count = this.props.mealplan[key];
+    // Checks to see if a mealPlanItem exists.
+    if(!mealPlanItem) return null;
+    // console.table(mealPlanItem.ingredients);
+    // console.log(this.props.myURL);
 
-    return <li key={key}>{count} - {mealPlanItem.name}</li>;
+    return (
+      <li key={key}>
+        <span>{count} - {mealPlanItem.name}</span>
+        <button className="remove-meal" onClick={() => {this.props.removeFromMealPlan(key)}}>Remove Meal</button>
+      </li>
+    );
   }
   render(){
     const mealPlanIds = Object.keys(this.props.mealplan);
-    
-    // const mealTotal = mealPlanIds.reduce((prevTotal, key) => {
-    //   const count = this.props.mealplan[key];
-    //   return prevTotal+count;
-    // }, 0);
 
     return(
       <div className="meal-plan-wrapper">
