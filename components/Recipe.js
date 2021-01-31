@@ -2,14 +2,20 @@ import React from 'react';
 
 class Recipe extends React.Component{
   handleClick = () => {
+    
     this.props.addToMealPlan(this.props.index);
-    // this.props.addToGroceryList(this.props.details.ingredients);
+    // this.props.addToGroceryList(this.props.index);
+    // const ingredients = this.props.details.ingredients;
+
+    // this.props.addToGroceryList(this.props.index);
+    // console.log(ingredients);
   }
   render(){
     const name = this.props.details.name;
     const image = this.props.details.image;
     const instructions = this.props.details.instructions;
     const ingredients = this.props.details.ingredients;
+    const groceryListItems = this.props.details.groceryListItems
     // const ingredients = Object.keys(this.props.details.ingrdients);
 
     return(

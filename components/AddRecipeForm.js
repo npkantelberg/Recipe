@@ -13,6 +13,7 @@ class AddRecipeForm extends React.Component{
       name: this.nameRef.current.value,
       image: this.imageRef.current.value,
       ingredients: this.ingredientsRef.current.value.split(","),
+      groceryListItems: this.ingredientsRef.current.value.split(","),
       instructions: this.instructionsRef.current.value
     }
     this.props.addRecipe(recipe);

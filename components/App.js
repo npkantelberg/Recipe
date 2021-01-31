@@ -12,21 +12,40 @@ class App extends React.Component{
   state = {
     recipes: {},
     mealplan: {},
-    // grocerylist: {}
+    grocerylist: {}
   };
 
   componentDidMount(){
     const localStorageRef = localStorage.getItem(this.props.match.params.recipeBookId);
+    const localStorageIngredientsRef = localStorage.getItem(this.props.match.params.recipeBookId);
+    console.log(localStorageIngredientsRef)
+    // const localStorageIngredientsRefRef = localStorage
+    // Checks to see if the local storage has any info for mealplan.
     if(localStorageRef){
+      // Sets the state of mealplan to the info in local storage.
       this.setState({
         mealplan: JSON.parse(localStorageRef)
       });
+      // this.setState({
+      //   grocerylist: JSON.parse(localStorageIngredientsRef)
+      // });
     }
+
+    // const localStorageIngredientsRef = localStorage.getItem(this.props.match.params.recipeBookId);
+
+    // this.setState({
+    //   grocerylist: JSON.parse(localStorageIngredientsRef);
+    // });
 
     // this ref is different than an input ref
     this.ref = base.syncState(`${this.props.match.params.recipeBookId}`, {
       context: this,
       state: 'recipes'
+    });
+
+    this.ref = base.syncState(`${this.props.match.params.recipeBookId}`, {
+      context: this,
+      state: 'grocerylist'
     });
   }
 
@@ -53,8 +72,27 @@ class App extends React.Component{
       recipes: recipes
     });
 
-    console.log(recipes);
   }
+
+  addToGroceryList = (key) => {
+    const grocerylist = {...this.state.grocerylist};
+
+    grocerylist[key] = grocerylist[key];
+
+    this.setState({
+      grocerylist: grocerylist
+    })
+  }
+
+  // addToGroceryList = (ingredients) => {
+  //   const grocerylist = {...this.state.grocerylist};
+
+  //   grocerylist[`ingredientsList${Date.now()}`] = ingredients;
+
+  //   this.setState({
+  //     grocerylist: grocerylist
+  //   })
+  // }
 
   addToMealPlan = (key) => {
     const mealplan = {...this.state.mealplan};
@@ -65,14 +103,18 @@ class App extends React.Component{
     })
   }
 
-  // addToGroceryList = (key) => {
+  // addItems = (ingredients) => {
   //   const grocerylist = {...this.state.grocerylist};
-  //   grocerylist[key] = grocerylist[key] + 1 || 1;
-  //   console.log(grocerylist);
+
+  //   grocerylist[key] = grocerylist[key];
+
   //   this.setState({
-  //     grocerylist: grocerylist
+  //     grocerylist: grocerylist;
   //   })
+
   // }
+
+  
 
   removeFromMealPlan = key => {
     // Take a copy of the mealplan state
@@ -93,14 +135,23 @@ class App extends React.Component{
         </div>
         <section className="recipes-section">
           <Recipes loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
-          {Object.keys(this.state.recipes).map(key => <Recipe key={key} index={key} addToMealPlan={this.addToMealPlan} details={this.state.recipes[key]}></Recipe>)}
+
+          {Object.keys(this.state.recipes).map(recipe => 
+            <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} details={this.state.recipes[recipe]}></Recipe>
+          )}
+
         </section>
         <section className="meal-plan-section">
           {/* to pass the state we could also do {...this.state} which would pass the full state */}
-          <MealPlan removeFromMealPlan={this.removeFromMealPlan} myURL={this.props.match.params.recipeBookId} recipes={this.state.recipes} mealplan={this.state.mealplan}></MealPlan>
+          
+          <MealPlan grocerylist={this.grocerylist} removeFromMealPlan={this.removeFromMealPlan} myURL={this.props.match.params.recipeBookId} recipes={this.state.recipes} mealplan={this.state.mealplan}></MealPlan>
+
         </section>
         <section className="grocery-list-section">
-          <GroceryList recipes={this.state.recipes} mealplan={this.state.mealplan}></GroceryList>
+          {/* {Object.keys(this.state.grocerylist).map(ingredient => <GroceryList ingredient={ingredient.split(',')} recipes={this.state.recipes} mealplan={this.state.mealplan}></GroceryList>)} */}
+          {Object.keys(this.state.grocerylist).map(ingredients => 
+            <GroceryList addToGroceryList={this.addToGroceryList} key={ingredients} index={ingredients} details={this.state.grocerylist[ingredients]}></GroceryList>
+          )}
         </section>
       </div>
     )
