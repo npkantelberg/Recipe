@@ -4,7 +4,6 @@ class AddRecipeForm extends React.Component{
   nameRef = React.createRef();
   imageRef = React.createRef();
   ingredientsRef = React.createRef();
-  // ingredientsArray = ingredientsRef.split(",");
   instructionsRef = React.createRef();
 
   addRecipe = (e) => {
