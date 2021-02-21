@@ -7,10 +7,15 @@ class GroceryList extends React.Component{
     
     // Check to see if a mealPlanItem exists.
     if(!groceryListItem) return null;
+    
     const groceryListIngredient = groceryListItem.groceryListItems.map((groceryListIngredient) => 
-    <li key={key}>
+    <li key={groceryListIngredient}>
       {groceryListIngredient}
-      <button onClick={() => {this.props.removeGroceryListItem(this.props.details[key], groceryListIngredient, groceryListItemId)}}>
+      {/* <button onClick={() => {this.props.removeGroceryListItem(this.props.details[key], groceryListIngredient, groceryListItemId)}}>
+        Remove Item
+      </button> */}
+      <button onClick={() => console.log(this.props.details[key].groceryListItems.indexOf('2 pinches freshly grated nutmeg'))}>test</button>
+      <button onClick={() => {this.props.removeGroceryListItem(this.props.details[key], groceryListIngredient)}}>
         Remove Item
       </button>
     </li>);

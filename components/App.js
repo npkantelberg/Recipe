@@ -35,10 +35,10 @@ class App extends React.Component{
       state: 'recipes'
     });
 
-    this.ref = base.syncState(`${this.props.match.params.recipeBookId}`, {
-      context: this,
-      state: 'grocerylist'
-    });
+    // this.ref = base.syncState(`${this.props.match.params.recipeBookId}`, {
+    //   context: this,
+    //   state: 'grocerylist'
+    // });
   }
 
   componentDidUpdate(){
@@ -62,20 +62,24 @@ class App extends React.Component{
     });
   }
 
-  resetGroceryList = (key) => {
-    const grocerylistreset = {...this.state.recipes}
-    console.log(grocerylistreset);
+  resetIngredients = (key) => {
+    const recipes = {...this.state.recipes}
+    recipes[key].groceryListItems = recipes[key].ingredients;
+    console.log('Ingredients: ' + recipes[key].ingredients + 'Grocery List Items: ' + recipes[key].groceryListItems);
     this.setState({
-      grocerylist: grocerylistreset
-    });
+      recipes: recipes
+    })
   }
 
   addToGroceryList = (key) => {
-    const grocerylist = {...this.state.grocerylist};
-    grocerylist[key] = grocerylist[key];
-    this.setState({
-      grocerylist: grocerylist
-    })
+    // const grocerylist = {...this.state.grocerylist};
+    // grocerylist[key] = grocerylist[key];
+    // this.setState({
+    //   grocerylist: grocerylist
+    // })
+
+
+
   }
 
   addToMealPlan = (key) => {
@@ -99,12 +103,20 @@ class App extends React.Component{
   }
 
   removeGroceryListItem = (key, groceryListIngredient) => {
-    const grocerylist = {...this.state.grocerylist}
+    const grocerylist = {...this.state.recipes} 
 
-    grocerylist[key] = key.groceryListItems.splice(key.groceryListItems.indexOf());
+    key.groceryListItems.splice(key.groceryListItems.indexOf(groceryListIngredient), 1);
+    console.log(grocerylist);
+    
+    // console.log(grocerylist.groceryListItems.splice(''))
+
+    // console.log(key.groceryListItems.splice(key.groceryListItems.indexOf('groceryListIngredient')));
+    // grocerylist[key] = key.groceryListItems.splice(key.groceryListItems.indexOf(groceryListIngredient));
+
+    // grocerylist[key] = key.groceryListItems.splice('test');
 
     this.setState({
-      grocerylist: grocerylist
+      recipes: grocerylist
     })
   }
 
@@ -115,7 +127,7 @@ class App extends React.Component{
           <Search></Search>
         </div>
         <section className="recipes-section">
-          <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
+          <Recipes  recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
 
           {Object.keys(this.state.recipes).map(recipe => 
             <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} details={this.state.recipes[recipe]}></Recipe>
@@ -123,14 +135,12 @@ class App extends React.Component{
         </section>
         <section className="meal-plan-section">
           {/* to pass the state we could also do {...this.state} which would pass the full state */}
-          <MealPlan grocerylist={this.grocerylist} removeFromMealPlan={this.removeFromMealPlan} myURL={this.props.match.params.recipeBookId} recipes={this.state.recipes} mealplan={this.state.mealplan}></MealPlan>
+          <MealPlan grocerylist={this.grocerylist} removeFromMealPlan={this.removeFromMealPlan} resetIngredients={this.resetIngredients} myURL={this.props.match.params.recipeBookId} recipes={this.state.recipes} mealplan={this.state.mealplan}></MealPlan>
 
         </section>
         <section className="grocery-list-section">
           <h1>Grocery List</h1>
-          <GroceryList resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.grocerylist}></GroceryList>
-          
-          <button onClick={() => this.resetGroceryList()} className="reset-grocery-list">Reset</button>
+          <GroceryList resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
         </section>
       </div>
     )
