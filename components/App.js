@@ -24,9 +24,6 @@ class App extends React.Component{
       this.setState({
         mealplan: JSON.parse(localStorageRef)
       });
-      // this.setState({
-      //   grocerylist: JSON.parse(localStorageIngredientsRef)
-      // });
     }
 
     // this ref is different than an input ref
@@ -34,11 +31,6 @@ class App extends React.Component{
       context: this,
       state: 'recipes'
     });
-
-    // this.ref = base.syncState(`${this.props.match.params.recipeBookId}`, {
-    //   context: this,
-    //   state: 'grocerylist'
-    // });
   }
 
   componentDidUpdate(){
@@ -71,17 +63,6 @@ class App extends React.Component{
     })
   }
 
-  addToGroceryList = (key) => {
-    // const grocerylist = {...this.state.grocerylist};
-    // grocerylist[key] = grocerylist[key];
-    // this.setState({
-    //   grocerylist: grocerylist
-    // })
-
-
-
-  }
-
   addToMealPlan = (key) => {
     const mealplan = {...this.state.mealplan};
     mealplan[key] = mealplan[key] + 1 || 1;
@@ -107,13 +88,6 @@ class App extends React.Component{
 
     key.groceryListItems.splice(key.groceryListItems.indexOf(groceryListIngredient), 1);
     console.log(grocerylist);
-    
-    // console.log(grocerylist.groceryListItems.splice(''))
-
-    // console.log(key.groceryListItems.splice(key.groceryListItems.indexOf('groceryListIngredient')));
-    // grocerylist[key] = key.groceryListItems.splice(key.groceryListItems.indexOf(groceryListIngredient));
-
-    // grocerylist[key] = key.groceryListItems.splice('test');
 
     this.setState({
       recipes: grocerylist
