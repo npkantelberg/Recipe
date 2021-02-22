@@ -3,8 +3,6 @@ import React from 'react';
 class GroceryList extends React.Component{
   renderGroceryList = (key) => {
     const groceryListItem = this.props.details[key];
-    
-    console.log(this.props.details[key]);
 
     // Check to see if a mealPlanItem exists.
     if(!groceryListItem) return null;

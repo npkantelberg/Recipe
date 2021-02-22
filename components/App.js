@@ -46,6 +46,7 @@ class App extends React.Component{
       recipes: currentRecipes
     })
   }
+
   addRecipe = (recipe) => {
     const recipes = {...this.state.recipes};
     recipes[`recipe${Date.now()}`] = recipe;
@@ -54,10 +55,29 @@ class App extends React.Component{
     });
   }
 
+  deleteRecipe = (key) => {
+    const recipes = {...this.state.recipes};
+    
+    recipes[key] = null;
+
+    this.setState({recipes: recipes});
+  }
+
+  removeGroceryListItem = (key, groceryListIngredient) => {
+    const grocerylist = {...this.state.recipes} 
+
+    key.groceryListItems.splice(key.groceryListItems.indexOf(groceryListIngredient), 1);
+
+    this.setState({
+      recipes: grocerylist
+    })
+  }
+
   resetIngredients = (key) => {
     const recipes = {...this.state.recipes}
+    
     recipes[key].groceryListItems = recipes[key].ingredients;
-    console.log('Ingredients: ' + recipes[key].ingredients + 'Grocery List Items: ' + recipes[key].groceryListItems);
+    
     this.setState({
       recipes: recipes
     })
@@ -101,10 +121,10 @@ class App extends React.Component{
           <Search></Search>
         </div>
         <section className="recipes-section">
-          <Recipes  recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
+          <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
 
           {Object.keys(this.state.recipes).map(recipe => 
-            <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} details={this.state.recipes[recipe]}></Recipe>
+            <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} deleteRecipe={this.deleteRecipe} details={this.state.recipes[recipe]}></Recipe>
           )}
         </section>
         <section className="meal-plan-section">
