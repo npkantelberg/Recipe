@@ -5,6 +5,17 @@ class Recipe extends React.Component{
     this.props.addToMealPlan(this.props.index);
   }
 
+  handleChange = (e) => {
+    const updatedRecipe = {
+      ...this.props.details,
+      [e.currentTarget.name]: e.currentTarget.value
+    };
+
+    this.props.updateRecipe(this.props.index, updatedRecipe);
+
+    
+  }
+
   render(){
     const name = this.props.details.name;
     const image = this.props.details.image;
@@ -16,9 +27,9 @@ class Recipe extends React.Component{
         <h2 className="recipe-name">{name}</h2>
         <img src={image} alt={name}/>
         <h4>Ingredients</h4>
-        <p className="ingredients-list">{ingredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)}</p>
+        <div className="ingredients-list">{ingredients.map((ingredient) => <input name={name} onChange={this.handleChange} key={ingredient} value={ingredient}></input>)}</div>
         <h4>Instructions</h4>
-        <p className="instructions">{instructions}</p>
+        <div className="instructions"><textarea onChange={this.handleChange} name={name} rows="20" value={instructions}></textarea></div>
         <button onClick={this.handleClick}>Add to Meal Plan</button>
         <button onClick={() => {this.props.deleteRecipe(this.props.index)}}>Remove</button>
       </div>

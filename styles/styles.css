@@ -33,3 +33,5 @@ fa {
   .recipe-wrapper .instructions {
     width: 100%;
     margin-top: 0px; }
+    .recipe-wrapper .instructions textarea {
+      width: 100%; }

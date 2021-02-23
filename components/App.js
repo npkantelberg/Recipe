@@ -63,6 +63,14 @@ class App extends React.Component{
     this.setState({recipes: recipes});
   }
 
+  updateRecipe = (key, updatedRecipe) => {
+    const recipes = {...this.props.recipes};
+    
+    recipes[key] = updatedRecipe;
+    console.log(recipes);
+    this.setState({recipes: recipes});
+  }
+
   removeGroceryListItem = (key, groceryListIngredient) => {
     const grocerylist = {...this.state.recipes} 
 
@@ -124,7 +132,7 @@ class App extends React.Component{
           <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
 
           {Object.keys(this.state.recipes).map(recipe => 
-            <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} deleteRecipe={this.deleteRecipe} details={this.state.recipes[recipe]}></Recipe>
+            <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} updateRecipe={this.updateRecipe} deleteRecipe={this.deleteRecipe} details={this.state.recipes[recipe]}></Recipe>
           )}
         </section>
         <section className="meal-plan-section">
