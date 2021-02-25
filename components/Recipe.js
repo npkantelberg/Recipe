@@ -8,8 +8,12 @@ class Recipe extends React.Component{
   handleChange = (e) => {
     const updatedRecipe = {
       ...this.props.details,
-      [e.currentTarget.name]: e.currentTarget.value
+      [this.props.details.name]: e.currentTarget.value
     };
+    // const name = this.props.details.name;
+
+    console.log(this.props.details.instructions); 
+    console.log(updatedRecipe);
 
     this.props.updateRecipe(this.props.index, updatedRecipe);
 

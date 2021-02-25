@@ -64,11 +64,13 @@ class App extends React.Component{
   }
 
   updateRecipe = (key, updatedRecipe) => {
-    const recipes = {...this.props.recipes};
+    const recipes = {...this.state.recipes};
     
     recipes[key] = updatedRecipe;
-    console.log(recipes);
-    this.setState({recipes: recipes});
+
+    this.setState({
+      recipes: recipes
+    });
   }
 
   removeGroceryListItem = (key, groceryListIngredient) => {
