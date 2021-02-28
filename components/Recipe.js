@@ -5,9 +5,10 @@ class Recipe extends React.Component{
     this.props.addToMealPlan(this.props.index);
   }
 
-  startEdit = () => {
-    $(this).parents('.recipe-wrapper').find('.recipe-input').toggleClass('show');
-    console.log($(this).text());
+  startEdit(edit){
+    const theButton = edit.target
+    // edit.parents('.recipe-wrapper').find('.recipe-input').toggleClass('show');
+    console.log(theButton);
   }
 
   handleChange = (e) => {
@@ -22,8 +23,6 @@ class Recipe extends React.Component{
     console.log(updatedRecipe);
 
     this.props.updateRecipe(this.props.index, updatedRecipe);
-
-    
   }
 
   render(){
@@ -43,7 +42,7 @@ class Recipe extends React.Component{
         <div className="instructions"><textarea onChange={this.handleChange} name="instructions" rows="20" value={instructions}></textarea></div>
         <button onClick={this.handleClick}>Add to Meal Plan</button>
         <button onClick={() => {this.props.deleteRecipe(this.props.index)}}>Remove</button>
-        <button onClick={this.startEdit} className="edit-recipe">Edit</button>
+        <button onClick={(edit) => {this.startEdit(edit)}} className="edit-recipe">Edit</button>
       </div>
     )
   }
