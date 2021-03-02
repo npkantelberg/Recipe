@@ -5,6 +5,17 @@ fa{
     font-family: 'Font Awesome\ 5 Free';
   }
 }
+button {
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  margin: 5px;
+  width: 100%;
+}
+textarea{
+  width: 100%;
+}
 // app component styles
 .react-wrapper {
   display: flex;
@@ -44,9 +55,6 @@ fa{
   .instructions {
     width: 100%;
     margin-top: 0px;
-    textarea{
-      width: 100%;
-    }
   }
   .input-switch{
     display: none;
