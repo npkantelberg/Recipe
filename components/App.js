@@ -2,7 +2,6 @@ import React from 'react';
 import Recipes from './Recipes';
 import Search from './Search';
 import currentRecipes from '../current-recipes';
-import '../customjs';
 import Recipe from './Recipe';
 import MealPlan from './MealPlan';
 import GroceryList from './GroceryList';

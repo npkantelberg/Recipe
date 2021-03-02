@@ -8,29 +8,6 @@ class Recipe extends React.Component{
     this.props.addToMealPlan(this.props.index);
   }
 
-  // startEdit(){
-    
-  //   // const theButton = edit.target
-  //   // // edit.parents('.recipe-wrapper').find('.recipe-input').toggleClass('show');
-  //   // console.log(theButton);
-
-    
-  //     if(this.state.isActive == true){
-  //       this.setState({
-  //         isActive: false
-  //       })
-  //     } else {
-  //       this.setState({
-  //         isActive: true
-  //       })
-  //     }
-  //   // this.setState({
-  //   //   isActive: !this.state.isActive
-  //   // });
-    
-  //   console.log(this.state.isActive);
-  // }
-
   handleIngredientChange = (e) => {
     const updatedRecipe = {
       ...this.props.details,
@@ -70,8 +47,6 @@ class Recipe extends React.Component{
         handleChange} key={ingredient}>{ingredient}</li>)}
           </ul>
         </div>
-        {/* <div inputswitch={this.state.active && 'active'} className="input-switch recipe-input ingredients-list">{ingredients.map((ingredient) => <input name="ingredients" onChange={this.
-        handleChange} key={ingredient} value={ingredient}></input>)}</div> */}
         
         <div inputswitch={this.state.active && 'active'} className="input-switch recipe-input ingredients-list">
           <textarea rows="20" name="ingredients" onChange={this.
