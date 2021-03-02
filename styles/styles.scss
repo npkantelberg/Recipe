@@ -48,4 +48,31 @@ fa{
       width: 100%;
     }
   }
+  .input-switch{
+    display: none;
+    &[inputswitch="active"]{
+      display: block;
+    }
+    &.recipe-input-h2{
+      height: 50px;
+      margin: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      border: solid 1px #666;
+      padding-left: 10px;
+      border-color: #666;
+    }
+  }
+  .recipe-read-only[readonlyswitch="active"]{
+    display: none;
+  }
+  .edit-recipe[inputswitch="active"]{
+    display: none;
+  }
+  .done-edit-recipe{
+    display: none;
+    &[inputswitch="active"]{
+      display: inline;
+    }
+  }
 }
