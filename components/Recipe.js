@@ -32,8 +32,6 @@ class Recipe extends React.Component{
     const instructions = this.props.details.instructions;
     const ingredients = this.props.details.ingredients;
 
-    
-
     return(
       <div className="recipe-wrapper">
         <h2 readOnly readonlyswitch={this.state.active && 'active'} className="recipe-read-only recipe-name">{name}</h2>

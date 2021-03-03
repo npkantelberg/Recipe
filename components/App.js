@@ -144,7 +144,7 @@ class App extends React.Component{
         </section>
         <section className="grocery-list-section">
           <h1>Grocery List</h1>
-          <GroceryList resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
+          <GroceryList updateRecipe={this.updateRecipe} resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
         </section>
       </div>
     )
