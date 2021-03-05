@@ -126,16 +126,24 @@ class App extends React.Component{
 
   render(){
     return(
-      <div className="react-wrapper">
-        <div className="search-wrapper">
+      <div popupActive={this.state.popupactive && 'popupactive'} className="react-wrapper">
+        {/* <div className="search-wrapper">
           <Search></Search>
+        </div> */}
+        <div popupActive={this.state.popupactive && 'popupactive'} className="add-recipe-section">
+          <h1 className="heading-large">Add a recipe!</h1>
+          <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe}></Recipes>
+          <div className="close-button-wrapper">
+            <button className="button close-button" popupActive={this.state.popupactive && 'popupactive'} onClick={() => this.setState({popupactive: !this.state.popupactive})}>Close</button>
+          </div>
         </div>
         <section className="recipes-section">
-          <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe} heading="Choose a recipe!"></Recipes>
-
-          {Object.keys(this.state.recipes).map(recipe => 
-            <Recipe addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} updateRecipe={this.updateRecipe} deleteRecipe={this.deleteRecipe} details={this.state.recipes[recipe]}></Recipe>
-          )}
+        <h1 className="heading-large">Choose a recipe!</h1>
+          <div className="recipe-wrap-outer">
+            {Object.keys(this.state.recipes).map(recipe => 
+              <Recipe resetIngredients={this.resetIngredients} addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} updateRecipe={this.updateRecipe} deleteRecipe={this.deleteRecipe} details={this.state.recipes[recipe]}></Recipe>
+            )}
+          </div>
         </section>
         <section className="meal-plan-section">
           {/* to pass the state we could also do {...this.state} which would pass the full state */}
@@ -146,6 +154,7 @@ class App extends React.Component{
           <h1>Grocery List</h1>
           <GroceryList updateRecipe={this.updateRecipe} resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
         </section>
+        <button onClick={() => this.setState({popupactive: !this.state.popupactive})}>Add New Recipe</button>
       </div>
     )
   }

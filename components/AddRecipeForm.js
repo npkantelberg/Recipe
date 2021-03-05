@@ -24,14 +24,16 @@ class AddRecipeForm extends React.Component{
   
   render(){
     return(
-      <form action="" onSubmit={this.addRecipe}>
-        <input name="name" ref={this.nameRef} type="text" placeholder="Name"></input>
-        <input name="image" ref={this.imageRef} type="text" placeholder="Image"></input>
-        <input type="file" ref={this.imageUploadRef} /> 
-        <textarea name="ingredients" ref={this.ingredientsRef} placeholder="Ingredients"></textarea>
-        <textarea name="instructions" ref={this.instructionsRef} placeholder="Instructions"></textarea>
-        <button type="submit">Add Recipe</button>
-      </form>      
+      <section className="add-recipe-wrapper">
+        <form action="" onSubmit={this.addRecipe}>
+          <input name="name" ref={this.nameRef} type="text" placeholder="Name"></input>
+          <input name="image" ref={this.imageRef} type="text" placeholder="Image"></input>
+          <input type="file" ref={this.imageUploadRef} /> 
+          <textarea name="ingredients" ref={this.ingredientsRef} placeholder="Ingredients"></textarea>
+          <textarea name="instructions" ref={this.instructionsRef} placeholder="Instructions"></textarea>
+          <button onClick={() => this.setState({popupactive: !this.state.popupactive})} type="submit">Add Recipe</button>
+        </form>
+      </section>
     )
   }
 }
