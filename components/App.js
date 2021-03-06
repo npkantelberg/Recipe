@@ -154,7 +154,7 @@ class App extends React.Component{
           <h1>Grocery List</h1>
           <GroceryList updateRecipe={this.updateRecipe} resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
         </section>
-        <button onClick={() => this.setState({popupactive: !this.state.popupactive})}>Add New Recipe</button>
+        <button className="popup-cta" onClick={() => this.setState({popupactive: !this.state.popupactive})}>Add New Recipe</button>
       </div>
     )
   }

@@ -18,6 +18,12 @@ fa {
 .heading-large {
   font-size: 36px; }
 
+.popup-cta {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #EB6450; }
+
 button,
 .button {
   padding: 10px;
@@ -34,7 +40,7 @@ textarea {
 .react-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   flex: 0 1 33%;
   min-width: 300px;
   position: relative;
@@ -43,11 +49,13 @@ textarea {
     width: 100%;
     flex: 1 1 100%; }
   .react-wrapper .meal-plan-section {
-    flex: 1 1 100%;
-    padding: 15px; }
+    padding: 15px;
+    flex: 0 1 40%;
+    min-width: 300px; }
   .react-wrapper .grocery-list-section {
-    flex: 1 1 100%;
-    padding: 15px; }
+    padding: 15px;
+    flex: 0 1 40%;
+    min-width: 300px; }
   .react-wrapper[popupactive="popupactive"] {
     max-height: 100vh;
     overflow: hidden; }
@@ -139,12 +147,3 @@ textarea {
         float: left;
         width: 30%;
         margin: 5px auto; }
-
-/* styles.css | http://localhost:8080/styles/styles.css */
-.recipes-section .recipe-wrap-outer .recipe-wrapper {
-  /* flex: 0 1 33%; */
-  flex: 0 1 30%;
-  padding: 10px;
-  background: #B3CBBF;
-  border-radius: 4px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); }
