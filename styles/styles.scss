@@ -53,14 +53,26 @@ textarea{
     flex: 1 1 100%;
   }
   .meal-plan-section {
-    padding: 15px;
-    flex: 0 1 40%;
     min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 45%;
+    min-width: 300px;
+    padding: 10px;
+    background: #B3CBBF;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
   .grocery-list-section {
-    padding: 15px;
-    flex: 0 1 40%;
+    padding: 10px;
+    flex: 0 1 45%;
     min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    background: #B3CBBF;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
   &[popupactive="popupactive"] {
     max-height: 100vh;
@@ -180,3 +192,5 @@ textarea{
     }
   }
 }
+
+
