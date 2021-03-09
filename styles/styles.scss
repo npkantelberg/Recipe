@@ -11,6 +11,9 @@ body{
   visibility: hidden;
   opacity: 0;
 }
+h1{
+  width: 100%;
+}
 fa{
   font-family: 'Font Awesome\ 5 Free';
   *{
@@ -41,10 +44,8 @@ textarea{
 }
 // app component styles
 .react-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex: 0 1 33%;
+  display: grid;
+  grid-template-columns: 75% 25%;
   min-width: 300px;
   position: relative;
   background: #eee;
@@ -73,6 +74,7 @@ textarea{
     background: #B3CBBF;
     border-radius: 4px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
   }
   &[popupactive="popupactive"] {
     max-height: 100vh;
@@ -120,12 +122,9 @@ textarea{
 
 // Recipe component styles
 .recipes-section {
-  flex: 1 1 100%;
   padding: 45px 15px 15px 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+  grid-row-start: 1;
+  grid-row-end: 3;
   .recipe-wrap-outer {
     display: flex;
     flex-wrap: wrap;
@@ -192,5 +191,3 @@ textarea{
     }
   }
 }
-
-

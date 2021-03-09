@@ -137,7 +137,7 @@ class App extends React.Component{
             <button className="button close-button" popupActive={this.state.popupactive && 'popupactive'} onClick={() => this.setState({popupactive: !this.state.popupactive})}>Close</button>
           </div>
         </div>
-        <section className="recipes-section">
+        <section className="recipes-section main-sections large-section">
         <h1 className="heading-large">Choose a recipe!</h1>
           <div className="recipe-wrap-outer">
             {Object.keys(this.state.recipes).map(recipe => 
@@ -145,12 +145,12 @@ class App extends React.Component{
             )}
           </div>
         </section>
-        <section className="meal-plan-section">
+        <section className="meal-plan-section main-sections smaller-section">
           {/* to pass the state we could also do {...this.state} which would pass the full state */}
           <MealPlan grocerylist={this.grocerylist} removeFromMealPlan={this.removeFromMealPlan} resetIngredients={this.resetIngredients} myURL={this.props.match.params.recipeBookId} recipes={this.state.recipes} mealplan={this.state.mealplan}></MealPlan>
 
         </section>
-        <section className="grocery-list-section">
+        <section className="grocery-list-section main-sections smaller-section">
           <h1>Grocery List</h1>
           <GroceryList updateRecipe={this.updateRecipe} resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
         </section>
