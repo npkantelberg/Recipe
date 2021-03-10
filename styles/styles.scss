@@ -45,6 +45,9 @@ button,
   margin: 5px;
   width: 100%;
   max-width: 200px;
+  &:hover{
+    cursor: pointer;
+  }
 }
 .button-row{
   display: flex;
