@@ -1,8 +1,12 @@
+// Variables
+
+$darkblue: #3D4A63;
+
 // General Styles
 body{
   margin: 0;
   padding: 0;  
-  color: #3e3e3e;
+  color: #fff;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -13,6 +17,7 @@ body{
 }
 h1{
   width: 100%;
+  grid-area: heading;
 }
 fa{
   font-family: 'Font Awesome\ 5 Free';
@@ -22,6 +27,7 @@ fa{
 }
 .heading-large{
   font-size: 36px;
+  color: #fff;
 }
 .popup-cta {
   position: fixed;
@@ -42,13 +48,22 @@ button,
 textarea{
   width: 100%;
 }
+.recipe-card{
+  background: #3D4A63;
+  border: solid 1px #fff;
+}
 // app component styles
 .react-wrapper {
   display: grid;
   grid-template-columns: 75% 25%;
   min-width: 300px;
   position: relative;
-  background: #eee;
+  background: $darkblue;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "heading heading"
+    "recipes mealPlan"
+    "recipes groceryList";
   .search-wrapper {
     width: 100%;
     flex: 1 1 100%;
@@ -60,9 +75,7 @@ textarea{
     flex: 0 1 45%;
     min-width: 300px;
     padding: 10px;
-    background: #B3CBBF;
-    border-radius: 4px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    grid-area: mealPlan;
   }
   .grocery-list-section {
     padding: 10px;
@@ -71,9 +84,7 @@ textarea{
     display: flex;
     flex-wrap: wrap;
     min-width: 300px;
-    background: #B3CBBF;
-    border-radius: 4px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    grid-area: groceryList;
     margin-top: 30px;
   }
   &[popupactive="popupactive"] {
@@ -122,9 +133,11 @@ textarea{
 
 // Recipe component styles
 .recipes-section {
-  padding: 45px 15px 15px 15px;
+  padding: 0px 15px 15px 15px;
   grid-row-start: 1;
   grid-row-end: 3;
+  background: #3D4A63;
+  grid-area: recipes;
   .recipe-wrap-outer {
     display: flex;
     flex-wrap: wrap;
@@ -136,9 +149,7 @@ textarea{
       flex: 0 1 30%;
       min-width: 300px;
       padding: 10px;
-      background: #B3CBBF;
-      border-radius: 4px;
-      box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+      border: solid 1px #fff;
       img {
         max-width: 100%;
         max-height: 25vh;

@@ -130,6 +130,7 @@ class App extends React.Component{
         {/* <div className="search-wrapper">
           <Search></Search>
         </div> */}
+        <h1 className="heading-large">Choose a recipe!</h1>
         <div popupActive={this.state.popupactive && 'popupactive'} className="add-recipe-section">
           <h1 className="heading-large">Add a recipe!</h1>
           <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe}></Recipes>
@@ -138,19 +139,18 @@ class App extends React.Component{
           </div>
         </div>
         <section className="recipes-section main-sections large-section">
-        <h1 className="heading-large">Choose a recipe!</h1>
           <div className="recipe-wrap-outer">
             {Object.keys(this.state.recipes).map(recipe => 
               <Recipe resetIngredients={this.resetIngredients} addToGroceryList={this.addToGroceryList} key={recipe} index={recipe} addToMealPlan={this.addToMealPlan} updateRecipe={this.updateRecipe} deleteRecipe={this.deleteRecipe} details={this.state.recipes[recipe]}></Recipe>
             )}
           </div>
         </section>
-        <section className="meal-plan-section main-sections smaller-section">
+        <section className="meal-plan-section main-sections smaller-section recipe-card">
           {/* to pass the state we could also do {...this.state} which would pass the full state */}
           <MealPlan grocerylist={this.grocerylist} removeFromMealPlan={this.removeFromMealPlan} resetIngredients={this.resetIngredients} myURL={this.props.match.params.recipeBookId} recipes={this.state.recipes} mealplan={this.state.mealplan}></MealPlan>
 
         </section>
-        <section className="grocery-list-section main-sections smaller-section">
+        <section className="grocery-list-section main-sections smaller-section recipe-card">
           <h1>Grocery List</h1>
           <GroceryList updateRecipe={this.updateRecipe} resetGroceryListItems={this.resetGroceryListItems} removeGroceryListItem={this.removeGroceryListItem} mealplan={this.state.mealplan} details={this.state.recipes}></GroceryList>
         </section>

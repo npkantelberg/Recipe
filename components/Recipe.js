@@ -33,7 +33,7 @@ class Recipe extends React.Component{
     const ingredients = this.props.details.ingredients;
 
     return(
-      <div className="recipe-wrapper">
+      <div className="recipe-wrapper recipe-card">
         <h1 readOnly readonlyswitch={this.state.active && 'active'} className="recipe-read-only recipe-name">{name}</h1>
         <input className="input-switch recipe-input recipe-input-h2" inputswitch={this.state.active && 'active'} type="text" name="name" onChange={this.handleChange} value={name}/>
         <img src={image} alt={name}/>   
