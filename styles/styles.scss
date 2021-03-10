@@ -28,6 +28,7 @@ fa{
 .heading-large{
   font-size: 36px;
   color: #fff;
+  padding-left: 15px;
 }
 .popup-cta {
   position: fixed;
@@ -44,6 +45,17 @@ button,
   margin: 5px;
   width: 100%;
   max-width: 200px;
+}
+.button-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  .button{
+    flex: 1 1 30%;
+    width: auto;
+    max-width: unset;
+  }
 }
 textarea{
   width: 100%;
@@ -64,6 +76,7 @@ textarea{
     "heading heading"
     "recipes mealPlan"
     "recipes groceryList";
+  padding: 15px;
   .search-wrapper {
     width: 100%;
     flex: 1 1 100%;
@@ -72,20 +85,22 @@ textarea{
     min-width: 300px;
     display: flex;
     flex-wrap: wrap;
-    flex: 0 1 45%;
     min-width: 300px;
     padding: 10px;
     grid-area: mealPlan;
+    margin: 7.5px;
+    .meal-plan-wrapper{
+      width: 100%;
+    }
   }
   .grocery-list-section {
     padding: 10px;
-    flex: 0 1 45%;
     min-width: 300px;
     display: flex;
     flex-wrap: wrap;
     min-width: 300px;
     grid-area: groceryList;
-    margin-top: 30px;
+    margin: 7.5px;
   }
   &[popupactive="popupactive"] {
     max-height: 100vh;
@@ -133,20 +148,21 @@ textarea{
 
 // Recipe component styles
 .recipes-section {
-  padding: 0px 15px 15px 15px;
   grid-row-start: 1;
   grid-row-end: 3;
   background: #3D4A63;
   grid-area: recipes;
+  margin-bottom: 15px;
   .recipe-wrap-outer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     .recipe-wrapper {
       display: flex;
       flex-wrap: wrap;
-      flex: 0 1 30%;
+      flex: 1 1 30%;
+      margin: 7.5px;
       min-width: 300px;
       padding: 10px;
       border: solid 1px #fff;
@@ -194,11 +210,9 @@ textarea{
           display: inline;
         }
       }
-      .button{
-        float: left;
-        width: 30%;
-        margin: 5px auto;
-      }
     }
   }
 }
+
+
+

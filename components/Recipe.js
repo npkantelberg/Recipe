@@ -57,13 +57,15 @@ class Recipe extends React.Component{
         <div readOnly readonlyswitch={this.state.active && 'active'} className="recipe-read-only recipe-input instructions"><div  name="instructions">{instructions}</div></div>
         <div inputswitch={this.state.active && 'active'} className="input-switch recipe-input instructions"><textarea onChange={this.handleChange} name="instructions" rows="20" value={instructions}></textarea></div>
         
-        <button className="button" onClick={this.handleClick}>Add to Meal Plan</button>
-        
-        <button className="button" onClick={() => {this.props.deleteRecipe(this.props.index)}}>Remove</button>
-        
-        <button className="button" inputswitch={this.state.active && 'active'} onClick={() => this.setState({active: !this.state.active})} className="edit-recipe">Edit</button>
+        <div className="button-row">
+          <button className="button" onClick={this.handleClick}>Add to Meal Plan</button>
+          
+          <button className="button" onClick={() => {this.props.deleteRecipe(this.props.index)}}>Remove</button>
+          
+          <button inputswitch={this.state.active && 'active'} onClick={() => this.setState({active: !this.state.active})} className="edit-recipe button">Edit</button>
 
-        <button className="button" inputswitch={this.state.active && 'active'} onClick={() => this.setState({active: !this.state.active})} className="input-swtich done-edit-recipe">Done</button>
+          <button className="button" inputswitch={this.state.active && 'active'} onClick={() => this.setState({active: !this.state.active})} className="input-swtich done-edit-recipe">Done</button>
+        </div>
       </div>
     )
   }
