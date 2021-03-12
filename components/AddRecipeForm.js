@@ -15,7 +15,7 @@ class AddRecipeForm extends React.Component{
       imageUpload: this.imageUploadRef.current.value,
       ingredients: this.ingredientsRef.current.value.split(","),
       groceryListItems: this.ingredientsRef.current.value.split(","),
-      instructions: this.instructionsRef.current.value
+      instructions: this.instructionsRef.current.value.split(",")
     }
     this.props.addRecipe(recipe);
     // refresh the form

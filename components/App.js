@@ -17,7 +17,6 @@ class App extends React.Component{
 
   componentDidMount(){
     const localStorageRef = localStorage.getItem(this.props.match.params.recipeBookId);
-    const localStorageIngredientsRef = localStorage.getItem(this.props.match.params.recipeBookId);
     // Checks to see if the local storage has any info for mealplan.
     if(localStorageRef){
       // Sets the state of mealplan to the info in local storage.
