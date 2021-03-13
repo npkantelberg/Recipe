@@ -23,6 +23,41 @@ fa {
   fa * {
     font-family: 'Font Awesome\ 5 Free'; }
 
+.close-button {
+  background: transparent;
+  border-radius: 10px;
+  width: 15px;
+  height: 15px;
+  padding: 0px;
+  margin: 0px;
+  position: relative; }
+  .close-button::after {
+    content: '';
+    transform: rotate(45deg);
+    background: #fff;
+    width: 0px;
+    height: 15px;
+    display: inline-block;
+    width: 0px;
+    border-right: solid 1px #fff;
+    border-radius: 5px;
+    border-left: solid 1px #fff;
+    position: absolute;
+    left: 6px; }
+  .close-button::before {
+    content: '';
+    transform: rotate(135deg);
+    background: #fff;
+    width: 0px;
+    height: 15px;
+    display: inline-block;
+    width: 0px;
+    border-right: solid 1px #fff;
+    border-radius: 5px;
+    border-left: solid 1px #fff;
+    position: absolute;
+    left: 6px; }
+
 .heading-large {
   font-size: 36px;
   color: #fff;
@@ -89,11 +124,14 @@ textarea {
   .react-wrapper .grocery-list-section {
     padding: 10px;
     min-width: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 300px;
     grid-area: groceryList;
     margin: 7.5px; }
+    .react-wrapper .grocery-list-section .recipe-wrapper li {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      margin-top: 10px; }
   .react-wrapper[popupactive="popupactive"] {
     max-height: 100vh;
     overflow: hidden; }

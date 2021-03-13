@@ -14,8 +14,8 @@ class GroceryList extends React.Component{
     const groceryListIngredient = groceryListItem.groceryListItems.map((groceryListIngredient) => 
     <li key={groceryListIngredient}>
       <span>{groceryListIngredient}</span>
-      <button onClick={() => {this.props.removeGroceryListItem(this.props.details[key], groceryListIngredient)}}>
-        Remove Item
+      <button className="close-button" onClick={() => {this.props.removeGroceryListItem(this.props.details[key], groceryListIngredient)}}>
+        
       </button>
     </li>);
 
