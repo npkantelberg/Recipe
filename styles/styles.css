@@ -185,7 +185,7 @@ textarea {
       padding: 10px;
       border: solid 1px #fff; }
       .recipes-section .recipe-wrap-outer .recipe-wrapper img {
-        max-width: 100%;
+        max-width: 450px;
         max-height: 25vh;
         width: 100%;
         object-fit: cover; }
