@@ -129,7 +129,7 @@ class App extends React.Component{
         {/* <div className="search-wrapper">
           <Search></Search>
         </div> */}
-        <h1 className="heading-large">Choose a recipe!</h1>
+        <h1 className="heading-large">Choose A Recipe!</h1>
         <div popupActive={this.state.popupactive && 'popupactive'} className="add-recipe-section">
           <h1 className="heading-large">Add a recipe!</h1>
           <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe}></Recipes>

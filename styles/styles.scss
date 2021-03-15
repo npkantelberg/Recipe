@@ -1,6 +1,8 @@
 // Variables
 
 $darkblue: #3D4A63;
+$primaryCTA: #333;
+$secondaryCTA: #eb6450;
 
 // General Styles
 body{
@@ -80,14 +82,17 @@ fa{
 button,
 .button {
   padding: 10px;
-  background: #333;
+  background: $primaryCTA;
   color: #fff;
   border: none;
   margin: 5px;
   width: 100%;
   max-width: 200px;
+  transition: .2s all;
   &:hover{
     cursor: pointer;
+    background: $secondaryCTA;
+    transition: .2s all;
   }
 }
 .button-row{

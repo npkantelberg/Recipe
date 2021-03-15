@@ -77,10 +77,13 @@ button,
   border: none;
   margin: 5px;
   width: 100%;
-  max-width: 200px; }
+  max-width: 200px;
+  transition: .2s all; }
   button:hover,
   .button:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background: #eb6450;
+    transition: .2s all; }
 
 .button-row {
   display: flex;
