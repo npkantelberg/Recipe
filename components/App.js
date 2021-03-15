@@ -125,16 +125,16 @@ class App extends React.Component{
 
   render(){
     return(
-      <div popupActive={this.state.popupactive && 'popupactive'} className="react-wrapper">
+      <div popupactive={this.state.popupactive && 'popupactive'} className="react-wrapper">
         {/* <div className="search-wrapper">
           <Search></Search>
         </div> */}
         <h1 className="heading-large">Choose A Recipe!</h1>
-        <div popupActive={this.state.popupactive && 'popupactive'} className="add-recipe-section">
+        <div popupactive={this.state.popupactive && 'popupactive'} className="add-recipe-section">
           <h1 className="heading-large">Add a recipe!</h1>
           <Recipes recipes={this.state.recipes} resetGroceryListItems={this.resetGroceryListItems} loadCurrentRecipes={this.loadCurrentRecipes} addRecipe={this.addRecipe}></Recipes>
           <div className="close-button-wrapper">
-            <button className="button close-button" popupActive={this.state.popupactive && 'popupactive'} onClick={() => this.setState({popupactive: !this.state.popupactive})}>Close</button>
+            <button className="button" popupactive={this.state.popupactive && 'popupactive'} onClick={() => this.setState({popupactive: !this.state.popupactive})}>Close</button>
           </div>
         </div>
         <section className="recipes-section main-sections large-section">

@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 body {
   margin: 0;
   padding: 0;
   color: #fff;
   max-width: 100vw;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif; }
 
 .hidden {
   display: none;
@@ -31,6 +33,8 @@ fa {
   padding: 0px;
   margin: 0px;
   position: relative; }
+  .close-button:hover {
+    background: transparent; }
   .close-button::after {
     content: '';
     transform: rotate(45deg);
@@ -43,7 +47,8 @@ fa {
     border-radius: 5px;
     border-left: solid 1px #fff;
     position: absolute;
-    left: 6px; }
+    left: 6px;
+    top: 0; }
   .close-button::before {
     content: '';
     transform: rotate(135deg);
@@ -56,7 +61,8 @@ fa {
     border-radius: 5px;
     border-left: solid 1px #fff;
     position: absolute;
-    left: 6px; }
+    left: 6px;
+    top: 0; }
 
 .heading-large {
   font-size: 36px;
@@ -148,6 +154,8 @@ textarea {
   bottom: 0;
   padding-top: 10vh;
   background: rgba(0, 0, 0, 0.9); }
+  .add-recipe-section button {
+    max-width: 100%; }
   .add-recipe-section .heading-large {
     width: 450px;
     margin: 0 auto;
