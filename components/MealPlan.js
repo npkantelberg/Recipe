@@ -13,8 +13,8 @@ class MealPlan extends React.Component{
       <li key={key}>
         <span>{count} - {mealPlanItem.name}</span>
         <div className="button-row">
-          <button className="button remove-meal" onClick={() => {this.props.removeFromMealPlan(key)}}>Remove Meal</button>
-          <button className="button reset-ingredients" onClick={() => {this.props.resetIngredients(key)}}>Reset Ingredients</button>
+          <button className="button remove-meal remove-button" onClick={() => {this.props.removeFromMealPlan(key)}}></button>
+          <button className="button reset-ingredients" onClick={() => {this.props.resetIngredients(key)}}><i class="fas fa-undo"></i></button>
         </div>
       </li>
     );

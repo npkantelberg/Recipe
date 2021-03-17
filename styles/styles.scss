@@ -35,7 +35,9 @@ fa{
     font-family: 'Font Awesome\ 5 Free';
   }
 }
-.close-button {
+span.remove-button,
+button.remove-button,
+div.remove-button {
   background: transparent;
   border-radius: 10px;
   width: 15px;
@@ -149,6 +151,27 @@ textarea{
     margin: 7.5px;
     .meal-plan-wrapper{
       width: 100%;
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        span{
+          margin-left: 5px;
+        }
+        .button-row {
+          display: inline-flex;
+          width: auto;
+          align-items: center;
+          .remove-button{
+            margin-right: 5px;
+            flex: 1;
+          }
+          .button.reset-ingredients {
+            background: transparent;
+            padding: 0px 15px;
+          }
+        }
+      }
     }
   }
   .grocery-list-section {

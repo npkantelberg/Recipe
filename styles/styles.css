@@ -25,7 +25,9 @@ fa {
   fa * {
     font-family: 'Font Awesome\ 5 Free'; }
 
-.close-button {
+span.remove-button,
+button.remove-button,
+div.remove-button {
   background: transparent;
   border-radius: 10px;
   width: 15px;
@@ -33,9 +35,13 @@ fa {
   padding: 0px;
   margin: 0px;
   position: relative; }
-  .close-button:hover {
+  span.remove-button:hover,
+  button.remove-button:hover,
+  div.remove-button:hover {
     background: transparent; }
-  .close-button::after {
+  span.remove-button::after,
+  button.remove-button::after,
+  div.remove-button::after {
     content: '';
     transform: rotate(45deg);
     background: #fff;
@@ -49,7 +55,9 @@ fa {
     position: absolute;
     left: 6px;
     top: 0; }
-  .close-button::before {
+  span.remove-button::before,
+  button.remove-button::before,
+  div.remove-button::before {
     content: '';
     transform: rotate(135deg);
     background: #fff;
@@ -130,6 +138,22 @@ textarea {
     margin: 7.5px; }
     .react-wrapper .meal-plan-section .meal-plan-wrapper {
       width: 100%; }
+      .react-wrapper .meal-plan-section .meal-plan-wrapper li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .react-wrapper .meal-plan-section .meal-plan-wrapper li span {
+          margin-left: 5px; }
+        .react-wrapper .meal-plan-section .meal-plan-wrapper li .button-row {
+          display: inline-flex;
+          width: auto;
+          align-items: center; }
+          .react-wrapper .meal-plan-section .meal-plan-wrapper li .button-row .remove-button {
+            margin-right: 5px;
+            flex: 1; }
+          .react-wrapper .meal-plan-section .meal-plan-wrapper li .button-row .button.reset-ingredients {
+            background: transparent;
+            padding: 0px 15px; }
   .react-wrapper .grocery-list-section {
     padding: 10px;
     min-width: 300px;
