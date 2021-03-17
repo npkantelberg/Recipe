@@ -54,7 +54,8 @@ div.remove-button {
     border-left: solid 1px #fff;
     position: absolute;
     left: 6px;
-    top: 0; }
+    top: 0;
+    z-index: 0; }
   span.remove-button::before,
   button.remove-button::before,
   div.remove-button::before {
@@ -70,7 +71,8 @@ div.remove-button {
     border-left: solid 1px #fff;
     position: absolute;
     left: 6px;
-    top: 0; }
+    top: 0;
+    z-index: 0; }
 
 .heading-large {
   font-size: 36px;
@@ -177,7 +179,8 @@ textarea {
   top: 0;
   bottom: 0;
   padding-top: 10vh;
-  background: rgba(0, 0, 0, 0.9); }
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1; }
   .add-recipe-section button {
     max-width: 100%; }
   .add-recipe-section .heading-large {
