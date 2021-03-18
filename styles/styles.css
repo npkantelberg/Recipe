@@ -120,13 +120,16 @@ textarea {
 
 .react-wrapper {
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   min-width: 300px;
   position: relative;
   background: #3D4A63;
   grid-template-rows: auto;
   grid-template-areas: "heading heading" "recipes mealPlan" "recipes groceryList";
   padding: 15px; }
+  @media screen and (max-width: 767px) {
+    .react-wrapper {
+      grid-template-areas: "heading heading"  "recipes recipes"  "mealPlan mealPlan"  "groceryList groceryList"; } }
   .react-wrapper .search-wrapper {
     width: 100%;
     flex: 1 1 100%; }

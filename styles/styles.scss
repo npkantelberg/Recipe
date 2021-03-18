@@ -129,7 +129,7 @@ textarea{
 // app component styles
 .react-wrapper {
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: repeat( auto-fit, minmax(300px, auto) );
   min-width: 300px;
   position: relative;
   background: $darkblue;
@@ -139,6 +139,13 @@ textarea{
     "recipes mealPlan"
     "recipes groceryList";
   padding: 15px;
+  @media screen and (max-width: 767px){
+    grid-template-areas: 
+      "heading heading" 
+      "recipes recipes" 
+      "mealPlan mealPlan" 
+      "groceryList groceryList";
+  }
   .search-wrapper {
     width: 100%;
     flex: 1 1 100%;
