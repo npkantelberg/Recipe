@@ -42,6 +42,7 @@ div.remove-button {
   border-radius: 10px;
   width: 15px;
   height: 15px;
+  min-width: 15px;
   padding: 0px;
   margin: 0px;
   position: relative;
@@ -117,6 +118,10 @@ button,
     flex: 1 1 30%;
     width: auto;
     max-width: unset;
+    @media screen and (max-width: 500px){
+      flex: 1 1 auto;
+      width: 100%;
+    }
   }
 }
 textarea{
@@ -129,8 +134,8 @@ textarea{
 // app component styles
 .react-wrapper {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, auto) );
-  min-width: 300px;
+  grid-template-columns: repeat( auto-fit, minmax(140px, auto) );
+  // min-width: 300px;
   position: relative;
   background: $darkblue;
   grid-template-rows: auto;
@@ -146,15 +151,18 @@ textarea{
       "mealPlan mealPlan" 
       "groceryList groceryList";
   }
+  ul{
+    li {
+      padding-right: 5px;
+    }
+  } 
   .search-wrapper {
     width: 100%;
     flex: 1 1 100%;
   }
   .meal-plan-section {
-    min-width: 300px;
     display: flex;
     flex-wrap: wrap;
-    min-width: 300px;
     padding: 10px;
     grid-area: mealPlan;
     margin: 7.5px;
@@ -168,16 +176,17 @@ textarea{
           margin-left: 5px;
         }
         .button-row {
-          display: inline-flex;
+          display: flex;
           width: auto;
           align-items: center;
+          flex-wrap: nowrap;
           .remove-button{
-            margin-right: 5px;
-            flex: 1;
+            margin-right: 2px;
+            width: 15px;
           }
           .button.reset-ingredients {
             background: transparent;
-            padding: 0px 15px;
+            padding: 0px;
           }
         }
       }
@@ -185,7 +194,6 @@ textarea{
   }
   .grocery-list-section {
     padding: 10px;
-    min-width: 300px;
     grid-area: groceryList;
     margin: 7.5px;
     .recipe-wrapper{
@@ -195,7 +203,15 @@ textarea{
         justify-content: space-between;
         flex-wrap: nowrap;
         margin-top: 10px;
+        span{
+          padding-right: 10px;
+        }
       }
+      .remove-button{
+        + div {
+          display: none;
+        }
+      } 
     }
   }
   &[popupactive="popupactive"] {
@@ -263,7 +279,7 @@ textarea{
       flex-wrap: wrap;
       flex: 1 1 30%;
       margin: 7.5px;
-      min-width: 300px;
+      // min-width: 300px;
       padding: 10px;
       border: solid 1px #fff;
       img {

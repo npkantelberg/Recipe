@@ -32,6 +32,7 @@ div.remove-button {
   border-radius: 10px;
   width: 15px;
   height: 15px;
+  min-width: 15px;
   padding: 0px;
   margin: 0px;
   position: relative; }
@@ -110,6 +111,10 @@ button,
     flex: 1 1 30%;
     width: auto;
     max-width: unset; }
+    @media screen and (max-width: 500px) {
+      .button-row .button {
+        flex: 1 1 auto;
+        width: 100%; } }
 
 textarea {
   width: 100%; }
@@ -120,8 +125,7 @@ textarea {
 
 .react-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-  min-width: 300px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, auto));
   position: relative;
   background: #3D4A63;
   grid-template-rows: auto;
@@ -130,14 +134,14 @@ textarea {
   @media screen and (max-width: 767px) {
     .react-wrapper {
       grid-template-areas: "heading heading"  "recipes recipes"  "mealPlan mealPlan"  "groceryList groceryList"; } }
+  .react-wrapper ul li {
+    padding-right: 5px; }
   .react-wrapper .search-wrapper {
     width: 100%;
     flex: 1 1 100%; }
   .react-wrapper .meal-plan-section {
-    min-width: 300px;
     display: flex;
     flex-wrap: wrap;
-    min-width: 300px;
     padding: 10px;
     grid-area: mealPlan;
     margin: 7.5px; }
@@ -150,18 +154,18 @@ textarea {
         .react-wrapper .meal-plan-section .meal-plan-wrapper li span {
           margin-left: 5px; }
         .react-wrapper .meal-plan-section .meal-plan-wrapper li .button-row {
-          display: inline-flex;
+          display: flex;
           width: auto;
-          align-items: center; }
+          align-items: center;
+          flex-wrap: nowrap; }
           .react-wrapper .meal-plan-section .meal-plan-wrapper li .button-row .remove-button {
-            margin-right: 5px;
-            flex: 1; }
+            margin-right: 2px;
+            width: 15px; }
           .react-wrapper .meal-plan-section .meal-plan-wrapper li .button-row .button.reset-ingredients {
             background: transparent;
-            padding: 0px 15px; }
+            padding: 0px; }
   .react-wrapper .grocery-list-section {
     padding: 10px;
-    min-width: 300px;
     grid-area: groceryList;
     margin: 7.5px; }
     .react-wrapper .grocery-list-section .recipe-wrapper li {
@@ -170,6 +174,10 @@ textarea {
       justify-content: space-between;
       flex-wrap: nowrap;
       margin-top: 10px; }
+      .react-wrapper .grocery-list-section .recipe-wrapper li span {
+        padding-right: 10px; }
+    .react-wrapper .grocery-list-section .recipe-wrapper .remove-button + div {
+      display: none; }
   .react-wrapper[popupactive="popupactive"] {
     max-height: 100vh;
     overflow: hidden; }
@@ -222,7 +230,6 @@ textarea {
       flex-wrap: wrap;
       flex: 1 1 30%;
       margin: 7.5px;
-      min-width: 300px;
       padding: 10px;
       border: solid 1px #fff; }
       .recipes-section .recipe-wrap-outer .recipe-wrapper img {

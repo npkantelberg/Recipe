@@ -83,12 +83,9 @@ class Recipe extends React.Component{
         
         <div className="button-row">
           <button className="button" onClick={this.handleClick}>Add to Meal Plan</button>
-          
-          <button className="button" onClick={() => {this.props.deleteRecipe(this.props.index)}}>Remove</button>
-          
           <button className="edit-recipe button" inputswitch={this.state.active && 'active'} onClick={() => this.setState({active: !this.state.active})}>Edit</button>
-
           <button className="button input-swtich done-edit-recipe" inputswitch={this.state.active && 'active'} onClick={() => this.setState({active: !this.state.active})}>Done</button>
+          <button className="button" onClick={() => {this.props.deleteRecipe(this.props.index)}}>Remove</button>
         </div>
       </div>
     )
