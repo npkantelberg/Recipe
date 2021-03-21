@@ -247,6 +247,20 @@ textarea{
         width: 100%;
         max-width: 100%;
       }
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      input {
+        flex: 1 1 49%;
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
+      textarea {
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
     }
   }
   .close-button-wrapper{

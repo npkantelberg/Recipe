@@ -205,6 +205,17 @@ textarea {
     .add-recipe-section .recipe .add-recipe-wrapper button {
       width: 100%;
       max-width: 100%; }
+    .add-recipe-section .recipe .add-recipe-wrapper form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+    .add-recipe-section .recipe .add-recipe-wrapper input {
+      flex: 1 1 49%;
+      margin-bottom: 5px;
+      margin-top: 0px; }
+    .add-recipe-section .recipe .add-recipe-wrapper textarea {
+      margin-bottom: 5px;
+      margin-top: 0px; }
   .add-recipe-section .close-button-wrapper {
     max-width: 450px;
     margin: 0 auto; }
