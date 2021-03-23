@@ -193,7 +193,8 @@ textarea {
   background: rgba(0, 0, 0, 0.9);
   z-index: 1; }
   .add-recipe-section button {
-    max-width: 100%; }
+    max-width: 100%;
+    margin: 5px 0px; }
   .add-recipe-section .heading-large {
     width: 450px;
     margin: 0 auto;
