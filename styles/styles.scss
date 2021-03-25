@@ -1,13 +1,18 @@
-// Variables
-
+/****************************************/
+/************** Variables ***************/
+/****************************************/
 $darkblue: #3D4A63;
 $primaryCTA: #333;
 $secondaryCTA: #eb6450;
 
-// Imports
+/****************************************/
+/*************** Imports ****************/
+/****************************************/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-// General Styles
+/****************************************/
+/*********** General Styles *************/
+/****************************************/
 body{
   margin: 0;
   padding: 0;  
@@ -91,7 +96,7 @@ div.remove-button {
   position: fixed;
   bottom: 0;
   right: 0;
-  background: #EB6450;
+  background: $secondaryCTA;
 }
 button,
 .button {
@@ -128,14 +133,16 @@ textarea{
   width: 100%;
 }
 .recipe-card{
-  background: #3D4A63;
+  background: $darkblue;
   border: solid 1px #fff;
 }
-// app component styles
+
+/****************************************/
+/********* App Component Styles *********/
+/****************************************/
 .react-wrapper {
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(140px, auto) );
-  // min-width: 300px;
   position: relative;
   background: $darkblue;
   grid-template-rows: auto;
@@ -219,7 +226,10 @@ textarea{
     overflow: hidden;
   }
 }
-// Add recipe component styles
+
+/****************************************/
+/***** App Recipe Component Styles ******/
+/****************************************/
 .add-recipe-section{
   display: none;
   position: absolute;
@@ -277,11 +287,13 @@ textarea{
   }
 } 
 
-// Recipe component styles
+/****************************************/
+/******* Recipe Component Styles ********/
+/****************************************/
 .recipes-section {
   grid-row-start: 1;
   grid-row-end: 3;
-  background: #3D4A63;
+  background: $darkblue;
   grid-area: recipes;
   .recipe-wrap-outer {
     display: flex;
@@ -293,7 +305,6 @@ textarea{
       flex-wrap: wrap;
       flex: 1 1 30%;
       margin: 7.5px;
-      // min-width: 300px;
       padding: 10px;
       border: solid 1px #fff;
       img {
@@ -319,6 +330,9 @@ textarea{
           display: block;
           flex: 1;
           width: 100%;
+          &.recipe-input-h2{
+            min-width: 70%;
+          }
         }
         &.recipe-input-h2{
           height: 50px;

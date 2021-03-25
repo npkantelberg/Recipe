@@ -1,4 +1,13 @@
+/****************************************/
+/************** Variables ***************/
+/****************************************/
+/****************************************/
+/*************** Imports ****************/
+/****************************************/
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+/****************************************/
+/*********** General Styles *************/
+/****************************************/
 body {
   margin: 0;
   padding: 0;
@@ -84,7 +93,7 @@ div.remove-button {
   position: fixed;
   bottom: 0;
   right: 0;
-  background: #EB6450; }
+  background: #eb6450; }
 
 button,
 .button {
@@ -123,6 +132,9 @@ textarea {
   background: #3D4A63;
   border: solid 1px #fff; }
 
+/****************************************/
+/********* App Component Styles *********/
+/****************************************/
 .react-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, auto));
@@ -182,6 +194,9 @@ textarea {
     max-height: 100vh;
     overflow: hidden; }
 
+/****************************************/
+/***** App Recipe Component Styles ******/
+/****************************************/
 .add-recipe-section {
   display: none;
   position: absolute;
@@ -226,6 +241,9 @@ textarea {
   .add-recipe-section[popupactive="popupactive"] {
     display: block; }
 
+/****************************************/
+/******* Recipe Component Styles ********/
+/****************************************/
 .recipes-section {
   grid-row-start: 1;
   grid-row-end: 3;
@@ -262,6 +280,8 @@ textarea {
           display: block;
           flex: 1;
           width: 100%; }
+          .recipes-section .recipe-wrap-outer .recipe-wrapper .input-switch[inputswitch="active"].recipe-input-h2 {
+            min-width: 70%; }
         .recipes-section .recipe-wrap-outer .recipe-wrapper .input-switch.recipe-input-h2 {
           height: 50px;
           margin: 10px;
