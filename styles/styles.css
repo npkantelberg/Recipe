@@ -274,6 +274,13 @@ textarea {
       .recipes-section .recipe-wrap-outer .recipe-wrapper .instructions {
         width: 100%;
         margin-bottom: 10px; }
+      .recipes-section .recipe-wrap-outer .recipe-wrapper .input-size-manager {
+        width: 100%;
+        display: flex; }
+        .recipes-section .recipe-wrap-outer .recipe-wrapper .input-size-manager .input-switch[inputswitch="active"].recipe-input-h2 {
+          max-width: 437px;
+          margin-left: 0px;
+          min-width: 0px; }
       .recipes-section .recipe-wrap-outer .recipe-wrapper .input-switch {
         display: none; }
         .recipes-section .recipe-wrap-outer .recipe-wrapper .input-switch[inputswitch="active"] {
