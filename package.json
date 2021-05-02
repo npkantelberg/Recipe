@@ -15,6 +15,7 @@
     "re-base": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-firebase-file-uploader": "^2.4.4",
     "react-router-dom": "^5.2.0",
     "react-transition-group": "^4.4.1"
   },

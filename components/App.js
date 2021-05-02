@@ -6,13 +6,17 @@ import Recipe from './Recipe';
 import MealPlan from './MealPlan';
 import GroceryList from './GroceryList';
 import base from '../base';
+import firebase from 'firebase';
+import FileUploader from "react-firebase-file-uploader";
 
 class App extends React.Component{
 
   state = {
     recipes: {},
     mealplan: {},
-    grocerylist: {}
+    grocerylist: {},
+    isUploading: false,
+    progress: 0,
   };
 
   componentDidMount(){
@@ -30,6 +34,12 @@ class App extends React.Component{
       context: this,
       state: 'recipes'
     });
+
+    // var storage = firebase.storage();
+    // var storageRef = storage.ref();
+    // var imageRef = storageRef.child('images/IMG_2488.jpg');
+    // console.log(imageRef.fullPath);
+
   }
 
   componentDidUpdate(){
@@ -123,12 +133,18 @@ class App extends React.Component{
     })
   }
 
+
+
   render(){
+    
     return(
       <div popupactive={this.state.popupactive && 'popupactive'} className="react-wrapper">
+
         {/* <div className="search-wrapper">
           <Search></Search>
         </div> */}
+        
+        
         <h1 className="heading-large">Choose A Recipe!</h1>
         <div popupactive={this.state.popupactive && 'popupactive'} className="add-recipe-section">
           <h1 className="heading-large">Add a recipe!</h1>
